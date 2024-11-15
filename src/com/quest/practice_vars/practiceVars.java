@@ -1,4 +1,4 @@
-package com.quest.practice_Vars;
+package com.quest.practice_vars;
 
 public class practiceVars {
     final static int VOTE_AGE=18;
