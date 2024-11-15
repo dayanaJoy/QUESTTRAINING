@@ -1,4 +1,4 @@
-package com.quest.practice_Vars;
+package com.quest.practice_vars;
 
 public class controlFlow {
     public static void main(String[] args) {
