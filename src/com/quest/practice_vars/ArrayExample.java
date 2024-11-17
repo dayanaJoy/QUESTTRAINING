@@ -16,6 +16,7 @@ public class ArrayExample {
                 arr2[i][j] = j+1;
             }
         }
+        System.out.println("\n2-D array");
         for (int[] araayeg : arr2) {
             System.out.println("----------");
             for (int x : araayeg) {
