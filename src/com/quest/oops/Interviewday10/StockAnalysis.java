@@ -1,74 +1,69 @@
 package com.quest.oops.Interviewday10;
+
 import java.util.Scanner;
+
 public class StockAnalysis {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
+        Scanner sc = null;
+        sc = new Scanner(System.in);
         // Input for Equity Stock
         System.out.println("Enter details for Equity Stock:");
         System.out.print("Stock Name: ");
-        String eqName = sc.nextLine();
+        String equityname = sc.nextLine();
         System.out.print("Stock Symbol: ");
-        String eqSymbol = sc.nextLine();
+        String equitysymbol = sc.nextLine();
         System.out.print("Sector: ");
         String sector = sc.nextLine();
         System.out.print("Number of days: ");
-        int n = sc.nextInt();
-        int[] eqPrices = new int[n];
+        int number_of_days = sc.nextInt();
+        int[] equityprices = new int[number_of_days];
         System.out.println("Enter prices: ");
-        for (int i = 0; i < n; i++) {
-            eqPrices[i] = sc.nextInt();
+        for (int i = 0; i < number_of_days; i++) {
+            equityprices[i] = sc.nextInt();
         }
         sc.nextLine();
-        EquityStockAnalyzer equityStock = new EquityStockAnalyzer(eqName, eqSymbol, eqPrices, sector);
+        EquityStockAnalyzer equityStock = new EquityStockAnalyzer(equityname, equitysymbol, equityprices, sector);
 
         // Input for Commodity Stock
         System.out.println("Enter details for Commodity Stock:");
         System.out.print("Stock Name: ");
-        String comName = sc.nextLine();
+        String commodityname = sc.nextLine();
         System.out.print("Stock Symbol: ");
-        String comSymbol = sc.nextLine();
+        String commoditysymbol = sc.nextLine();
         System.out.print("Commodity Type: ");
-        String commodityType = sc.nextLine();
+        String commoditytype = sc.nextLine();
         System.out.print("Number of days: ");
-        int m = sc.nextInt();
-        int[] comPrices = new int[m];
+        int Number_of_days = sc.nextInt();
+        int[] commodityprices = new int[Number_of_days];
         System.out.println("Enter prices: ");
-        for (int i = 0; i < m; i++) {
-            comPrices[i] = sc.nextInt();
+        for (int i = 0; i < Number_of_days; i++) {
+            commodityprices[i] = sc.nextInt();
         }
-        CommodityStockAnalyzer commodityStock = new CommodityStockAnalyzer(comName, comSymbol, comPrices, commodityType);
+        CommodityStockAnalyzer commodityStock = new CommodityStockAnalyzer(commodityname, commoditysymbol, commodityprices, commoditytype);
 
-        // Perform analysis
+        // display
         System.out.println();
         equityStock.displayAnalysis();
         System.out.println();
         commodityStock.displayAnalysis();
 
         // Comparison
-        System.out.println("\nComparison Results:");
+        System.out.println("Comparison Results:");
         if (equityStock.calculateAveragePrice() > commodityStock.calculateAveragePrice()) {
-            System.out.println("Stock with Highest Average Price: Equity Stock - " + eqName +
-                    " with Average Price: " + equityStock.calculateAveragePrice());
+            System.out.println("Stock with Highest Average Price: Equity Stock - " + equityname + " with Average Price: " + equityStock.calculateAveragePrice());
         } else {
-            System.out.println("Stock with Highest Average Price: Commodity Stock - " + comName +
-                    " with Average Price: " + commodityStock.calculateAveragePrice());
+            System.out.println("Stock with Highest Average Price: Commodity Stock - " + commodityname + " with Average Price: " + commodityStock.calculateAveragePrice());
         }
 
-        int eqTrend = Integer.parseInt(equityStock.findLongestIncreasingTrend());
-        int comTrend = Integer.parseInt(commodityStock.findLongestIncreasingTrend());
-        if (eqTrend > comTrend) {
-            System.out.println("Stock with Longest Increasing Trend: Equity Stock - " + eqName +
-                    " with a trend length of " + eqTrend + " days.");
-        } else if (comTrend > eqTrend) {
-            System.out.println("Stock with Longest Increasing Trend: Commodity Stock - " + comName +
-                    " with a trend length of " + comTrend + " days.");
+        int[] equityTrend = equityStock.findLongestIncreasingTrend();
+        int[] commodityTrend = commodityStock.findLongestIncreasingTrend();
+        if (equityTrend[2] > commodityTrend[2]) {
+            System.out.println("\nStock with longest increasing trend is equity trend\n" + "name= " + equityname + " with " + equityTrend[2] + " days");
+        } else if (equityTrend[2] < commodityTrend[2]) {
+            System.out.println("\nStock with longest increasing trend is commodity trend\n" + "name= " + commodityStock.stockName + " with " + commodityTrend[2] + " days");
         } else {
-            System.out.println("Both " + eqName + " and " + comName +
-                    " have the same longest increasing trend length of " + eqTrend + " days.");
+            System.out.println("\nBoth have same trend length");
+            sc.close();
         }
-        sc.close();
+    }
 }
-}
-
-

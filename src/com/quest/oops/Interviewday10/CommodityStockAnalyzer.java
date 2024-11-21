@@ -40,23 +40,30 @@ public class CommodityStockAnalyzer extends StockAnalyzer {
     }
 
     @Override
-    String findLongestIncreasingTrend() {
-        int start = 1, maxLength = 1, length = 1, end = 1;
+    public int[] findLongestIncreasingTrend() {
+        int maxLength = 0;
+        int start = 0;
+        int end = 0;
+        int currentStart = 0;
+        int length = 1;
+
         for (int i = 1; i < prices.length; i++) {
             if (prices[i] > prices[i - 1]) {
                 length++;
-            } else {
                 if (length > maxLength) {
                     maxLength = length;
-                    start = i - length;
-                    end = i - 1;
+                    start = currentStart;
+                    end = i;
                 }
+            } else {
                 length = 1;
+                currentStart = i;
             }
         }
-        return "Start Day " + start  + ", End Day " + end + ", Length: " + maxLength + " days";
+        return new int[]{start, end, maxLength};
     }
-@Override
+
+    @Override
 void displayAnalysis() {
     System.out.println("Analysis for Commodity Stock:");
     System.out.println("Stock Name: " + stockName);
@@ -65,7 +72,8 @@ void displayAnalysis() {
     System.out.println("Highest Price: " + findMaxPrice());
     System.out.println("Lowest Price: " + findMinPrice());
     System.out.println("Average Price: " + calculateAveragePrice());
-    System.out.println("Longest Increasing Trend: " + findLongestIncreasingTrend());
+    int[] trend = findLongestIncreasingTrend();
+    System.out.println("Longest Increasing Trend: Start Day " + (trend[0] + 1) + ", End Day " + (trend[1] + 1) + ", Length: " + trend[2] + " days");
 }
 }
 
