@@ -13,6 +13,6 @@ abstract class StockAnalyzer {
     abstract int findMaxPrice();
     abstract int findMinPrice();
     abstract double calculateAveragePrice();
-    abstract String findLongestIncreasingTrend();
+    abstract int[] findLongestIncreasingTrend();
     abstract void displayAnalysis();
 }
