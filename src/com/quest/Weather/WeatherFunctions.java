@@ -69,7 +69,7 @@ public class WeatherFunctions implements Weatheroperations {
     public void Reports() {
         System.out.println("\nCities grouped by condition:");
         String[] conditions = {"Sunny", "Rainy", "Cloudy"};
-        for (int i = 0; i < conditions.length; i++) {
+        for (int i = 0; i <=conditions.length; i++) {
             String condition = conditions[i];
             System.out.print(condition + ": ");
             for (i = 0; i < cities.size(); i++) {
@@ -77,8 +77,8 @@ public class WeatherFunctions implements Weatheroperations {
                 if (weather.getCondition().equalsIgnoreCase(condition)) {
                     System.out.print(weather.getName() + " ");
                 }
+                System.out.print(", ");
             }
-            System.out.println();
         }
 
         double totalTemp = 0;

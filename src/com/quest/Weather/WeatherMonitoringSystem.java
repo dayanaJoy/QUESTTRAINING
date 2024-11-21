@@ -16,7 +16,7 @@ public class WeatherMonitoringSystem {
             System.out.println("1. Add Weather Data");
             System.out.println("2. Update Weather Data");
             System.out.println("3. Display Weather for a City");
-            System.out.println("4. Display All Cities Weather");
+            System.out.println("4. Display All Cities ");
             System.out.println("5. Find Extreme Temperatures");
             System.out.println("6. Reports");
             System.out.println("7.Alerts");
@@ -79,11 +79,11 @@ public class WeatherMonitoringSystem {
 
                 case 8:
                     exit = true;
-                    System.out.println("Exiting the Weather Monitoring System. Goodbye!");
+                    System.out.println("Exit!");
                     break;
 
                 default:
-                    System.out.println("Invalid choice! Please try again.");
+                    System.out.println("Invalid choice.");
             }
         }
         sc.close();
