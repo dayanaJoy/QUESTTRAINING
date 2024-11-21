@@ -1,4 +1,4 @@
-package com.quest.WeatherSystem;
+package com.quest.CaeStudy;
 
 public interface Weatheroperations {
     void addCityWeather(WeatherData weatherData);

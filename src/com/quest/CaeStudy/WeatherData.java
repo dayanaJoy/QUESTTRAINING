@@ -1,4 +1,4 @@
-package com.quest.WeatherSystem;
+package com.quest.CaeStudy;
 
 public abstract class WeatherData {
     String name;

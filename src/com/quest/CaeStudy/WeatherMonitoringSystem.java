@@ -1,4 +1,4 @@
-package com.quest.WeatherSystem;
+package com.quest.CaeStudy;
 
 import java.util.Scanner;
 
