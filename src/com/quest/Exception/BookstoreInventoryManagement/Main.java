@@ -20,11 +20,12 @@ public class Main {
 
         System.out.println("\npurchase : ");
         try {
+            for(Book book : books) {
             books[0].Check(3);
             books[1].Check(2);
             books[2].Check(6);
             books[3].Check(3);
-            books[4].Check(5);
+            books[4].Check(5);}
         } catch (OutOfStockException e) {
             System.out.println("OutOfStockException : " + e.getMessage());
         }
@@ -36,9 +37,13 @@ public class Main {
 
         double price = 200.00;
         System.out.println("\nBooks priced above " + price + " :");
-        Arrays.stream(books).filter(book -> book.getPrice() > price)
-                .forEach(book -> System.out.println(book.getTitle()));
+        Bookfilter Filterprice = book -> book.getPrice() > price;
 
+        System.out.println("Books priced above " + price + ":");
+        Bookfilter filter = book -> book.getPrice() > price;
+        Arrays.stream(books)
+                .filter(filter::filter)
+                .forEach(book -> System.out.println(book.getTitle()));
         }
     }
 

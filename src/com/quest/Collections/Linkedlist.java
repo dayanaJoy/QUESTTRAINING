@@ -32,8 +32,8 @@ public class Linkedlist {
         System.out.println(list2.isEmpty());//true(nodata)
         System.out.println(list.isEmpty());//false
         System.out.println(list.contains("Alice"));//true (ifavailabe)
-        Person p = new Person();
-        list2.remove(p);
+        //Person p = new Person();
+        //list2.remove(p);
 
     }
 }
