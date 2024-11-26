@@ -45,5 +45,5 @@ public abstract class WeatherData {
         this.condition = condition;
     }
 
-    public abstract void display() ;
+    public abstract void display();
 }
