@@ -38,11 +38,9 @@ public class Main {
         double price = 200.00;
         System.out.println("\nBooks priced above " + price + " :");
         Bookfilter Filterprice = book -> book.getPrice() > price;
-
-        System.out.println("Books priced above " + price + ":");
         Bookfilter filter = book -> book.getPrice() > price;
         Arrays.stream(books)
-                .filter(filter::filter)
+                .filter(book -> filter.filter(book))
                 .forEach(book -> System.out.println(book.getTitle()));
         }
     }
