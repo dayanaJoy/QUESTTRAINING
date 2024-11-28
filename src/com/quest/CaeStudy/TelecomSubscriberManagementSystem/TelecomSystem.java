@@ -3,12 +3,13 @@ package com.quest.CaeStudy.TelecomSubscriberManagementSystem;
 import java.io.*;
 import java.util.*;
 
-public class TelecomSystem {
+public class TelecomSystem implements Telecom{
 
     private ArrayList<Subscriber> subscribers = new ArrayList<>();
     private ArrayList<List<CallHistory>> callHistory = new ArrayList<>();
 
     // Add new subscriber
+    @Override
     public void addSubscriber(int id, String name, String phoneNumber, String planType, double balance) {
             for (Subscriber subscriber : subscribers) {
                 if (subscriber.getId() == id) {
@@ -24,6 +25,7 @@ public class TelecomSystem {
     }
 
     // Update balance for prepaid subscribers
+    @Override
     public void updateBalance(int id, double amount) {
         for (Subscriber subscriber : subscribers) {
             if (subscriber.getId() == id && subscriber.getPlanType().equalsIgnoreCase("Prepaid")) {
@@ -36,6 +38,7 @@ public class TelecomSystem {
     }
 
     // List all subscribers
+    @Override
     public void listSubscribers() {
         if (subscribers.isEmpty()) {
             System.out.println("No subscribers found.");
@@ -47,6 +50,7 @@ public class TelecomSystem {
     }
 
     // Record a call for a subscriber
+    @Override
     public void recordCall(int subscriberId, String callType, int duration, String timestamp) {
         for (Subscriber subscriber : subscribers) {
             if (subscriber.getId() == subscriberId) {
@@ -61,6 +65,7 @@ public class TelecomSystem {
     }
 
     // Display call history for a subscriber
+    @Override
     public void displayCallHistory(int subscriberId) {
         for (int i = 0; i < subscribers.size(); i++) {
             if (subscribers.get(i).getId() == subscriberId) {
@@ -79,6 +84,7 @@ public class TelecomSystem {
     }
 
     // Generate bill for a postpaid subscriber
+    @Override
     public void generateBill(int subscriberId) {
         for (int i = 0; i < subscribers.size(); i++) {
             Subscriber subscriber = subscribers.get(i);
@@ -109,6 +115,7 @@ public class TelecomSystem {
     }
 
     //save data
+    @Override
     public void saveData() {
         try{
             ObjectOutputStream SubscriberStream = new ObjectOutputStream(new FileOutputStream("Subcriber.txt"));
@@ -124,6 +131,7 @@ public class TelecomSystem {
     }
 
     //Load data
+    @Override
     public void loadData() {
         try{
             ObjectInputStream SubscriberStream = new ObjectInputStream(new FileInputStream("Subcriber.txt"));
@@ -139,5 +147,4 @@ public class TelecomSystem {
             System.out.println("Error. "+e.getMessage());
         }
     }
-
 }
