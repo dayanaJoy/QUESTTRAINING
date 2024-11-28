@@ -1,4 +1,4 @@
-package com.quest.Exception.BookstoreInventoryManagement;
+package com.quest.Lambda.BookstoreInventoryManagement;
 
 @FunctionalInterface
 public interface Bookfilter {

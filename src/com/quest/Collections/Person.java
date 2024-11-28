@@ -44,4 +44,13 @@ public class Person {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+    public void printPerson() {
+        System.out.println("Name: " + name + "\tAge: " + age + "\tLocation: " + location + "\t Gender: " + gender);
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Age: " + age + ", Location: " + location + ", Gender: " + gender;
+    }
 }

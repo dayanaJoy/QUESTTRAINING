@@ -1,4 +1,4 @@
-package com.quest.Exception.BookstoreInventoryManagement;
+package com.quest.Lambda.BookstoreInventoryManagement;
 
 import java.util.Arrays;
 
@@ -20,12 +20,11 @@ public class Main {
 
         System.out.println("\npurchase : ");
         try {
-            for(Book book : books) {
             books[0].Check(3);
             books[1].Check(2);
             books[2].Check(6);
             books[3].Check(3);
-            books[4].Check(5);}
+            books[4].Check(5);
         } catch (OutOfStockException e) {
             System.out.println("OutOfStockException : " + e.getMessage());
         }
@@ -38,9 +37,9 @@ public class Main {
         double price = 200.00;
         System.out.println("\nBooks priced above " + price + " :");
         Bookfilter Filterprice = book -> book.getPrice() > price;
-        Bookfilter filter = book -> book.getPrice() > price;
+        Bookfilter fil = book -> book.getPrice() > price;
         Arrays.stream(books)
-                .filter(book -> filter.filter(book))
+                .filter(book -> fil.filter(book))
                 .forEach(book -> System.out.println(book.getTitle()));
         }
     }

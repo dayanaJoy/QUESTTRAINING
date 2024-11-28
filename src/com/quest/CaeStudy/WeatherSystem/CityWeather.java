@@ -1,4 +1,4 @@
-package com.quest.CaeStudy;
+package com.quest.CaeStudy.WeatherSystem;
 
 public class CityWeather extends WeatherData {
     public CityWeather(String name, double temp, double humidity, String condition) {

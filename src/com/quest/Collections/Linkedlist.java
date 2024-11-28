@@ -22,7 +22,7 @@ public class Linkedlist {
         //System.out.println(list.remove(2));
         //list.remove();//by default oth index element removed
         //list.clear();
-        //System.out.println(list.size());//voth array and linkedlist
+        //System.out.println(list.size());//both array and linkedlist
         for(String s : list){
             //System.out.println(s);
         }

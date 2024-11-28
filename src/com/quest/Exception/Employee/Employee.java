@@ -1,6 +1,8 @@
 package com.quest.Exception.Employee;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
     private String name;
     private int age;
     private double salary;

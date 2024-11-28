@@ -1,4 +1,4 @@
-package com.quest.CaeStudy;
+package com.quest.CaeStudy.WeatherSystem;
 
 import java.util.ArrayList;
 
