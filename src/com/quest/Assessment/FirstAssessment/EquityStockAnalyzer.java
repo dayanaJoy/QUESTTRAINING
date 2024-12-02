@@ -1,6 +1,4 @@
-package com.quest.oops.Interviewday10;
-
-import java.util.Arrays;
+package com.quest.Assessment.FirstAssessment;
 
 public class EquityStockAnalyzer extends StockAnalyzer {
     String sector;

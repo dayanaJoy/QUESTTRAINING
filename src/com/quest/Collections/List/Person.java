@@ -1,4 +1,4 @@
-package com.quest.Collections;
+package com.quest.Collections.List;
 
 public class Person {
     String name;

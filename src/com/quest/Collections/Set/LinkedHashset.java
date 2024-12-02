@@ -1,4 +1,4 @@
-package com.quest.Collections;
+package com.quest.Collections.Set;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 public class LinkedHashset {

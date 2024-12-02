@@ -1,4 +1,4 @@
-package com.quest.Collections;
+package com.quest.Collections.List;
 
 import java.util.Iterator;
 import java.util.LinkedList;

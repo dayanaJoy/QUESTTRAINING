@@ -1,4 +1,4 @@
-package com.quest.oops.Interviewday10;
+package com.quest.Assessment.FirstAssessment;
 
 abstract class StockAnalyzer {
     String stockName;

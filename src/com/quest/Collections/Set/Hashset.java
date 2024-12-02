@@ -1,4 +1,4 @@
-package com.quest.Collections;
+package com.quest.Collections.Set;
 import java.util.HashSet;
 import java.util.Iterator;
 
