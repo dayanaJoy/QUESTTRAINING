@@ -13,6 +13,6 @@ public class CharCount {
         for (char c : chars) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
-        map.forEach((k, v) -> System.out.println(k + ": " + v));
+        map.forEach((k, v) -> System.out.println(k + " : " + v));
     }
 }

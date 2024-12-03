@@ -14,6 +14,6 @@ public class RemoveEven {
         list.add(6);
         System.out.println("List : " + list);
         list.removeIf(x -> x % 2 == 0);
-        System.out.println("List(after removeing even numbers) : " + list);
+        System.out.println("List(after removing even numbers) : " + list);
     }
 }
