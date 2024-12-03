@@ -20,15 +20,15 @@ public class Playlist implements PlaylistOperations {
     }
 
     @Override
-    public void addTrack(Track track) {
+    public void addTrack(Track track)  {
         try {
             if (tracks.contains(track)) {
-                throw new DuplicateTrackException("Track already exists");
+                System.out.println("Track already exists");
             }
-            this.tracks.add(track);
-        } catch (DuplicateTrackException e) {
-            System.out.println("DuplicateTrackException: " + e.getMessage());
+        }catch (Exception e) {
+            System.out.println("Exception : " + e.getMessage());
         }
+        this.tracks.add(track);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class Playlist implements PlaylistOperations {
         tracks.remove(track);
     }
 
-    @Override
+
     public List<Track> findDuplicateTracks() {
         Set<Track> uniqueTracks = new HashSet<>();
         List<Track> duplicateTracks = new ArrayList<>();
@@ -52,7 +52,7 @@ public class Playlist implements PlaylistOperations {
         return duplicateTracks;
     }
 
-    @Override
+
     public List<Track> search(String keyword) {
         List<Track> result = new ArrayList<>();
         for (Track track : tracks) {

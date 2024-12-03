@@ -50,8 +50,11 @@ public class Main {
                     break;
 
                 case 2:
+                    //add
                     System.out.print("Enter playlist name: ");
                     String playlistName = sc.nextLine();
+                    System.out.println("Enter track id: ");
+                    int trackId = sc.nextInt();
                     System.out.print("Enter track title: ");
                     String title = sc.nextLine();
                     System.out.print("Enter track artist: ");
@@ -60,13 +63,16 @@ public class Main {
                     double duration = sc.nextDouble();
                     sc.nextLine();
 
-                    Track track = new Track(1, title, artist, duration);
+                    Track track = new Track(trackId, title, artist, duration);
                     user1.getPlaylists(playlistName).addTrack(track);
                     break;
 
                 case 3:
+                    //remove track from playlist
                     System.out.print("Enter playlist name: ");
                     playlistName = sc.nextLine();
+                    System.out.println("Enter track id: ");
+                    trackId = sc.nextInt();
                     System.out.print("Enter track title: ");
                     title = sc.nextLine();
                     System.out.print("Enter track artist: ");
@@ -75,11 +81,12 @@ public class Main {
                     duration = sc.nextDouble();
                     sc.nextLine();
 
-                    track = new Track(1, title, artist, duration);
+                    track = new Track(trackId, title, artist, duration);
                     user1.getPlaylists(playlistName).removeTrack(track);
                     break;
 
                 case 4:
+                    //display based on name
                     System.out.print("Enter playlist name: ");
                     playlistName = sc.nextLine();
                     user1.getPlaylists(playlistName).display();
@@ -144,6 +151,7 @@ public class Main {
                     break;
 
                 case 7:
+                    //sort by duration or title or rating
                     System.out.print("Enter playlist name: ");
                     playlistName = sc.nextLine();
                     System.out.print("Sort by 1. Duration, 2. Title, 3. Rating: ");
@@ -160,12 +168,14 @@ public class Main {
                     break;
 
                 case 8:
+                    //Shuffle Tracks in Playlist
                     System.out.print("Enter playlist name: ");
                     playlistName = sc.nextLine();
                     user1.getPlaylists(playlistName).shuffle();
                     break;
 
                 case 9:
+                    // Merge Two Playlists
                     System.out.print("Enter first playlist name: ");
                     String playlistName1 = sc.nextLine();
                     System.out.print("Enter second playlist name: ");
@@ -243,7 +253,6 @@ public class Main {
                         System.out.println("Track with ID " + trackIdToFavorite + " not found in the playlist.");
                     }
                     break;
-
 
                 case 13:
                     user1.displayFavorites();
