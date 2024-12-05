@@ -26,4 +26,8 @@ public class Stream {
             e.printStackTrace();
         }
     }
+
+    public static Stream of(int i, int i1, int i2) {
+        return null;
+    }
 }

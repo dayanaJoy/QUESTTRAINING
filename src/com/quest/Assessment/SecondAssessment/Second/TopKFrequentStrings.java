@@ -17,7 +17,7 @@ public class TopKFrequentStrings {
             frequencyMap.put(s, frequencyMap.getOrDefault(s, 0) + 1);
         }
 
-        // Sort the map entries by frequency and alphabetically for ties
+        // Sort the map entries by frequency
         List<Map.Entry<String, Integer>> entryList = new ArrayList<>(frequencyMap.entrySet());
         entryList.sort((a, b) -> b.getValue() == a.getValue() ? a.getKey().compareTo(b.getKey()) : b.getValue() - a.getValue());
 
