@@ -1,33 +1,19 @@
 package com.quest.FileHandling;
 
+import com.quest.CaeStudy.BMWServices.Vehicle;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Locale;
 
 public class Stream {
-    public static void main(String[] args)  {
-        try {
-            FileInputStream fid = new FileInputStream("file1.txt");
-            System.out.println("File is created successfully");
-            int c ;
-            String str = "Input as streams";
-            FileOutputStream fos = new FileOutputStream("file1.txt");
-           // fos.write(fid.read());
-            while ((c = fid.read()) != -1) {
-             System.out.print((char) c);
-            }
-            fid.close();
-            fos.close();
-            System.out.println("\nFile stream is closed successfully");
-        }catch(FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void main(String[] args) {
+
     }
 
-    public static Stream of(int i, int i1, int i2) {
-        return null;
+    public static Locale of(Vehicle electricVehicle, Vehicle combustionEngineVehicle) {
+            return null;
     }
 }
