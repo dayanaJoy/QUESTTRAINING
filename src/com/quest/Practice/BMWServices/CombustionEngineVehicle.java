@@ -1,4 +1,4 @@
-package com.quest.CaeStudy.BMWServices;
+package com.quest.Practice.BMWServices;
 
 public class CombustionEngineVehicle extends Vehicle{
     private String fuelType;

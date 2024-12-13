@@ -136,8 +136,8 @@ public class TelecomSystem implements Telecom{
         try{
             ObjectInputStream SubscriberStream = new ObjectInputStream(new FileInputStream("Subcriber.txt"));
             ObjectInputStream CallHistoryStream = new ObjectInputStream(new FileInputStream("CallHistory.txt"));
-            SubscriberStream.readObject();
-            CallHistoryStream.readObject();
+            subscribers = (ArrayList<Subscriber>)SubscriberStream.readObject();
+            callHistory = (ArrayList<List<CallHistory>>) CallHistoryStream.readObject();
             System.out.println("Data loaded successfully.");
         } catch (FileNotFoundException e) {
             System.out.println("File not found. "+e.getMessage());

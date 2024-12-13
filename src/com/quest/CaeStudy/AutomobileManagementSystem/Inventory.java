@@ -49,7 +49,5 @@ public class Inventory {
                 .filter(vehicle -> vehicle.getVehicleID().equalsIgnoreCase(vehicleId))
                 .findFirst()
                 .orElse(null);
-
-
     }
 }

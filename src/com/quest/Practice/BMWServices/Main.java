@@ -1,4 +1,4 @@
-package com.quest.CaeStudy.BMWServices;
+package com.quest.Practice.BMWServices;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -12,7 +12,8 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         //create vehicle
-        ElectricVehicle electricVehicle = new ElectricVehicle("EV1", "BMW", "i3", 2020, 20000, "John", 40, 300);
+        ElectricVehicle electricVehicle = new ElectricVehicle("EV1", "BMW", "i3", 2020, 20000, "John", 40, 300.0);
+
         CombustionEngineVehicle combustionEngineVehicle = new CombustionEngineVehicle("CEV1", "BMW", "X5", 2018, 55000, "Jane", "Petrol", 3.0);
         //service centers
         ServiceCenter<ElectricVehicle> electricVehicleServiceCenter = new ServiceCenter<>();

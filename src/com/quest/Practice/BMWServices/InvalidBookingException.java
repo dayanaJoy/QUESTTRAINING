@@ -1,4 +1,4 @@
-package com.quest.CaeStudy.BMWServices;
+package com.quest.Practice.BMWServices;
 
 public class InvalidBookingException extends Exception{
     public InvalidBookingException(String message){

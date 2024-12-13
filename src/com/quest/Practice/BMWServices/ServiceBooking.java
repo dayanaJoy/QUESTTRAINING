@@ -1,4 +1,4 @@
-package com.quest.CaeStudy.BMWServices;
+package com.quest.Practice.BMWServices;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
